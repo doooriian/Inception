@@ -4,7 +4,9 @@ FROM debian:bookworm
 # Install nginx (the web server) and openssl (to generate the SSL certificate)
 # We chain the commands in a single RUN to avoid creating unnecessary image layers
 # rm -rf /var/lib/apt/lists/* cleans the package cache to keep the image small
-RUN apt-get update && apt-get install -y nginx openssl \
+RUN apt-get update && apt-get install -y \
+	nginx \
+	openssl \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Generate a self-signed SSL certificate valid for 365 days

@@ -1,0 +1,17 @@
+[mysqld]
+# Run the MariaDB server as the dedicated mysql Linux user, not as root.
+user = mysql
+
+# Standard MariaDB/MySQL port.
+port = 3306
+
+# Listen on all network interfaces inside the container.
+# Required so the WordPress container can connect through the Docker network.
+bind-address = 0.0.0.0
+
+# Directory where MariaDB stores its internal database files.
+# This path will be mounted as a persistent volume.
+datadir = /var/lib/mysql
+
+# Local Unix socket used by MariaDB tools inside the same container.
+socket = /run/mysqld/mysqld.sock

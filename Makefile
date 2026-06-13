@@ -2,7 +2,7 @@ NAME = inception
 
 COMPOSE = docker compose -p $(NAME) -f srcs/docker-compose.yml
 
-DATA_DIR = /home/dorian/data
+DATA_DIR = $(HOME)/data
 WORDPRESS_DATA = $(DATA_DIR)/wordpress
 MARIADB_DATA = $(DATA_DIR)/mariadb
 

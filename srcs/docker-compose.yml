@@ -1,65 +1,120 @@
 services:
   mariadb:
     container_name: mariadb
+
+    # Build the MariaDB image from our own Dockerfile.
     build:
       context: ./requirements/mariadb
       dockerfile: Dockerfile
+
+    # The image name must match the service name.
     image: mariadb
+
+    # Load database credentials from the local .env file.
     env_file:
       - .env
+
+    # Persist MariaDB data outside the container.
+    # Inside the container, MariaDB stores its data in /var/lib/mysql.
     volumes:
       - mariadb_data:/var/lib/mysql
+
+    # Connect MariaDB to the private Docker network.
     networks:
       - inception
+
+    # Restart the container automatically if it stops.
     restart: always
 
   wordpress:
     container_name: wordpress
+
+    # Build the WordPress/PHP-FPM image from our own Dockerfile.
     build:
       context: ./requirements/wordpress
       dockerfile: Dockerfile
+
+    # The image name must match the service name.
     image: wordpress
+
+    # Load WordPress and database configuration from the local .env file.
     env_file:
       - .env
+
+    # Persist WordPress files and share them with the NGINX container.
     volumes:
       - wordpress_data:/var/www/html
+
+    # Connect WordPress to the same private Docker network.
     networks:
       - inception
+
+    # Start MariaDB before WordPress.
+    # This does not guarantee that MariaDB is ready, so the WordPress setup
+    # script still waits for the database before installing WordPress.
     depends_on:
       - mariadb
+
+    # Restart the container automatically if it stops.
     restart: always
 
   nginx:
     container_name: nginx
+
+    # Build the NGINX image from our own Dockerfile.
     build:
       context: ./requirements/nginx
       dockerfile: Dockerfile
+
+    # The image name must match the service name.
     image: nginx
+
+    # Expose only HTTPS to the host machine.
+    # Host port 443 is forwarded to container port 443.
     ports:
       - "443:443"
+
+    # Mount the same WordPress files volume so NGINX can serve static files
+    # and pass PHP requests to the WordPress/PHP-FPM container.
     volumes:
       - wordpress_data:/var/www/html
+
+    # Connect NGINX to the private Docker network.
     networks:
       - inception
+
+    # Start WordPress before NGINX.
+    # This does not guarantee that PHP-FPM is ready immediately.
     depends_on:
       - wordpress
+
+    # Restart the container automatically if it stops.
     restart: always
 
 networks:
   inception:
+    # Use Docker's bridge driver to create an isolated private network.
+    # Containers on this network can reach each other by service name,
+    # for example nginx -> wordpress:9000 and wordpress -> mariadb:3306.
     driver: bridge
 
 volumes:
   wordpress_data:
+    # Use a local Docker volume backed by a real host directory.
     driver: local
     driver_opts:
       type: none
       o: bind
+      # Store WordPress files on the host for persistence.
+      # ${HOME} makes the path portable between machines/users.
       device: ${HOME}/data/wordpress
 
   mariadb_data:
+    # Use a local Docker volume backed by a real host directory.
     driver: local
     driver_opts:
       type: none
       o: bind
+      # Store MariaDB database files on the host for persistence.
+      # ${HOME} makes the path portable between machines/users.
       device: ${HOME}/data/mariadb

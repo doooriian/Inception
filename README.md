@@ -1,5 +1,3 @@
-*This project has been created as part of the 42 curriculum by doley.*
-
 <br />
 <p align="center">
   <a href="https://42.fr/">

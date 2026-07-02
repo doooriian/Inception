@@ -19,7 +19,6 @@
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/inception?color=7B1FA2" />
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/inception?color=D32F2F" />
 </p>
----
 
 ## ✨ Overview
 
@@ -474,17 +473,14 @@ exit;
 
 ---
 
-## 🤖 AI Usage
+## ✅ Results
 
-AI was used as a learning and documentation support tool during this project.
+Here’s my score for the Inception project:
 
-Its main purpose was to help clarify advanced concepts such as Docker networking, NGINX configuration, PHP-FPM, MariaDB initialization and the interactions between services.
+<p align="center">
+  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/100Grade.png" alt="Inception's Grade">
+</p>
 
-It was also used as a self-evaluation tool by generating questions about the project, helping me check whether I could explain the infrastructure and justify my technical choices.
-
-AI also helped improve the structure, wording and visual consistency of the documentation files.
-
-All technical decisions, configurations and commands were reviewed, tested and adapted manually before being included in the project.
 
 ---
 

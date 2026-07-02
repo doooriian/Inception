@@ -14,10 +14,10 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/inception?color=1A237E" />
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/inception?color=00BCD4" />
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/inception?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/inception?color=D32F2F" />
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Inception?color=1A237E" />
+  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Inception?color=00BCD4" />
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Inception?color=7B1FA2" />
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/Inception?color=D32F2F" />
 </p>
 
 ## ✨ Overview

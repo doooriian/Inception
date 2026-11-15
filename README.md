@@ -1,23 +1,16 @@
-<p align="center">
-  <a href="https://42.fr/">
-    <img src="https://github.com/doooriian/42-Badges/blob/main/42_Logo.png" alt="42 Logo" width="100" height="100">
-  </a>
+<div align="center">
 
-  <h1 align="center">Inception</h1>
+<a href="https://42.fr/"><img src="https://raw.githubusercontent.com/doooriian/42-Badges/main/badges/inceptione.png" width="125" alt="Inception 42 project badge" /></a>
 
-  <p align="center">
-    A Docker-based system administration project from 42 School
-    <br /><br />
-    <img src="https://github.com/doooriian/42-Badges/blob/main/badges/inceptione.png" alt="Inception Badge" width="125">
-  </p>
-<p align="center"><img src="https://img.shields.io/badge/42%20School-Project-0891B2?style=flat-square" alt="42 School project" /></p>
+# Inception
 
-<p align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Inception?color=1A237E" />
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Inception?color=00BCD4" />
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Inception?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/Inception?color=D32F2F" />
-</p>
+**Docker-based infrastructure**
+
+<img src="https://img.shields.io/badge/42%20School-Project-0891B2?style=flat-square" alt="42 School project" />
+
+</div>
+
+---
 
 ## 🔎 Overview
 

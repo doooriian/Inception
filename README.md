@@ -378,6 +378,8 @@ make fclean
 make re
 ```
 
+**Warning:** `make re` invokes `make fclean` first and therefore also deletes the persistent data under `$(HOME)/data` before rebuilding.
+
 ---
 
 ## 🧪 Testing

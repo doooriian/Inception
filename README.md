@@ -4,26 +4,18 @@
 
 # Inception
 
-**42 School · 🐳 Software engineering project**
+**42 School project · Containerized web infrastructure**
 
 <img src="https://img.shields.io/badge/42_Project-Docker%20%7C%20Infrastructure-0891B2?style=flat-square" alt="Inception technology" />
 <img src="https://img.shields.io/badge/Documentation-Project_Overview-334155?style=flat-square" alt="Project documentation" />
 
 </div>
 
----
-
 A small containerized web stack built from individual Docker images, with HTTPS, persistent storage, and service isolation.
-
-
----
 
 ## 🔎 Overview
 
 Inception is a systems administration exercise: deploy WordPress behind NGINX, connect it to MariaDB, and keep the services separated on a private Docker network.
-
-
----
 
 ## ✨ Features
 
@@ -32,9 +24,6 @@ Inception is a systems administration exercise: deploy WordPress behind NGINX, c
 - MariaDB for persistent application data
 - Dedicated Docker images and network isolation
 - Persistent host-backed storage for the database and website
-
-
----
 
 ## 🧩 Technical approach
 
@@ -51,9 +40,6 @@ Browser
 Each service has its own Dockerfile in `srcs/requirements/`. Docker Compose orchestrates the containers, networking and volumes. The host-backed data directories are created by the root Makefile.
 
 > **Tech stack** · Docker · Docker Compose · NGINX · WordPress/PHP-FPM · MariaDB · Shell · Make.
-
-
----
 
 ## 🚀 Build and usage
 
@@ -78,15 +64,9 @@ The setup exposes HTTPS on port `443`. Local certificates may require trust conf
 
 **Warning:** `make fclean` is destructive: it removes Docker resources and runs `sudo rm -rf $(HOME)/data`. Check that directory before using the command.
 
-
----
-
 ## 🧪 Verification
 
 Check the container status with `make ps`, open the configured HTTPS domain, and verify that the three services can communicate. No automated CI test suite is included.
-
-
----
 
 ## ⚠️ Notes and limitations
 
@@ -94,9 +74,6 @@ Check the container status with `make ps`, open the configured HTTPS domain, and
 - Credentials belong in the untracked local `srcs/.env`, never in Git
 - The root Makefile assumes that `$(HOME)/data` is dedicated to this project
 - NGINX is the only service whose port is published to the host
-
-
----
 
 ## 📚 Documentation
 
